@@ -13,7 +13,8 @@ entity Rounds {
 entity Holes {
   key ID : UUID;
   shots : Assocation to many Shots;
-  par : Int4
+  par : Int4;
+  score : Int4;
 }
 
 entity Shots {
