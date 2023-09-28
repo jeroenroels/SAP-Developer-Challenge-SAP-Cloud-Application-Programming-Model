@@ -1,22 +1,27 @@
+using {
+  managed,
+  sap
+} from '@sap/cds/common';
+
 namespace golf;
 
-entity Rounds {
-  key ID : UUID;
-  title  : String(111);
-  entrees: {
-    firstname : String(100);
-    lastname : String (100);
-  }
-  holes : Assocation to many Holes;
+entity Rounds : managed {
+  key ID      : UUID;
+      title   : String(111);
+      entrees : {
+        firstname : String(100);
+        lastname  : String(100);
+      };
+      holes   : Association to many Holes;
 }
 
-entity Holes {
-  key ID : UUID;
-  shots : Assocation to many Shots;
-  par : Int4;
-  score : Int4;
+entity Holes : managed {
+  key ID    : UUID;
+      par   : Int16;
+      score : Int16;
+      shots : Association to many Shots;
 }
 
-entity Shots {
+entity Shots : managed {
   key ID : UUID;
 }
