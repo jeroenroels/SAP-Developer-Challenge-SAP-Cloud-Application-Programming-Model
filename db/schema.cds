@@ -16,10 +16,11 @@ entity Rounds : managed {
 }
 
 entity Holes : managed {
-  key ID    : UUID;
-      par   : Int16;
-      score : Int16;
-      shots : Association to many Shots;
+  key ID     : UUID;
+      par    : Int16;
+      score  : Int16;
+      shots  : Association to many Shots;
+      rounds : Association to many Rounds;
 }
 
 entity Shots : managed {
